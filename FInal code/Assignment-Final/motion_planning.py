@@ -201,5 +201,3 @@ def get_path(source, destination):
     plot_path(random_coordinates, transformed_random_coordinates, transformed_obstacle_coordinates, obstacle_positions, path_indices)
     
     return path
-
-get_path((0, 0), (-2.5, 10))

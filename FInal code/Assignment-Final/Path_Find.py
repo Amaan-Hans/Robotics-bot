@@ -12,7 +12,7 @@ class SurveillanceBotMover:
     def __init__(self):
         # Publishers and Subscribers
         self.pub = rospy.Publisher('/cmd_vel_mux/input/navi', Twist, queue_size=10)
-        self.sub = rospy.Subscriber('/odom', Odometry, self.odom_callback)
+        self.sub = rospy.Subscriber('/odom', Odometry, self.handle_odometry)
 
 
         # State variables
@@ -31,7 +31,7 @@ class SurveillanceBotMover:
         self.model_state_srv  = rospy.ServiceProxy('gazebo/get_model_state', GetModelState)
 
 
-    def odom_callback(self, msg):
+    def handle_odometry(self, msg):
         # Fetch position from Gazebo instead of odometry topic
         try:
             result = self.model_state_srv('mobile_base', '')  # Robot's model name in Gazebo World

@@ -169,7 +169,7 @@ def get_path(source, destination):
     Motion planning using Probabilistic Roadmap.
     '''
 
-    img = cv2.imread('best_so_far_2.pgm', cv2.IMREAD_GRAYSCALE)
+    img = cv2.imread('mapping.pgm', cv2.IMREAD_GRAYSCALE)
     occupied_thresh = 0.65
     thresh = int(occupied_thresh * 255)
 

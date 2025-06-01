@@ -32,7 +32,6 @@ class SurveillanceBotMover:
 
 
     def handle_odometry(self, msg):
-        # Fetch position from Gazebo instead of odometry topic
         try:
             result = self.model_state_srv('mobile_base', '')  # Robot's model name in Gazebo World
             pos = result.pose.position
